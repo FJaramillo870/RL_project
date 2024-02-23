@@ -4,7 +4,7 @@
 
 The primary goal of this project is to implement and train a reinforcement learning agent to play a selected game effectively. The objectives include understanding and defining the game environment, selecting an appropriate reinforcement learning algorithm, training the agent, and evaluating its performance. By the end of the project, we aim to have a well-trained agent capable of making intelligent decisions within the game context.
 
-## Method
+## Review of the Methods 
 
 The project will begin by selecting a suitable game environment, such as Tic-Tac-Toe or CartPole. An implementation of the chosen game will be developed or adopted. The reinforcement learning algorithm, likely Deep Q Networks (DQN), will be implemented to train the agent. The training process will involve adjusting hyperparameters and monitoring the agent's learning curve. Visualizations, including learning curves and videos of the agent's gameplay, will be created to understand the training progress. Comparisons with alternative reinforcement learning algorithms may be explored to evaluate their effectiveness.
 
