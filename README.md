@@ -1,6 +1,6 @@
 # Reinforcement Learning for Game Playing
 
-## Goal's and Objectives
+## Goals and Objectives
 
 The primary goal of this project is to implement and train a reinforcement learning agent to play a selected game effectively. The objectives include understanding and defining the game environment, selecting an appropriate reinforcement learning algorithm, training the agent, and evaluating its performance. By the end of the project, we aim to have a well-trained agent capable of making intelligent decisions within the game context.
 
