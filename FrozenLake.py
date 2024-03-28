@@ -6,6 +6,7 @@ import time
 from IPython.display import clear_output
 import seaborn as sns
 import matplotlib.pyplot as plt
+import pandas as pd
 
 #Next, to create our environment, we just call gym.make() 
 #and pass a string of the name of the environment we want to set up.
@@ -96,13 +97,45 @@ for episode in range(num_episodes):
 rewards_per_thousand_episodes = np.split(np.array(rewards_all_episodes),num_episodes/1000)
 count = 1000
 
+a = []
+b = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
+print(a)
 print("********Average reward per thousand episodes********\n")
 for r in rewards_per_thousand_episodes:
-    print(count, ": ", str(sum(r/1000)))
+    ans = str(sum(r/1000))
+    print(count, ": ", ans)
+    a.append(ans)
     count += 1000
 
 print("\n\n********Q-table********\n")
 print(q_table)
+
+dict = {'Episodes': b, 'Rewards Per Episode': a}
+
+df = pd.DataFrame(dict)
+print(df)
+
+#creates heatmap for q_table
+sns.heatmap(q_table)
+plt.show()
+
+
+#Creates heatmap for gameboard
+favorite_moves = np.argmax(q_table, axis=1)
+#print(favorite_moves)
+#print(favorite_moves.shape)
+
+game_board = favorite_moves.reshape((4, 4))
+#print(game_board)
+
+sns.heatmap(game_board)
+plt.show()
+
+
+#Creates line plot for episodes and rewards
+sns.lineplot(data=df, x="Episodes", y="Rewards Per Episode")
+plt.show()
+
 
 """
 #UNEEDED CODE PART 2 OF TUTORIAL ALLOWS US TO WATCH THE AGENT BUT IS NOT RELATED TO THE
@@ -140,7 +173,3 @@ for episode in range(3):
 
 env.close()
 """
-sns.heatmap(q_table)
-plt.show()
-
-
